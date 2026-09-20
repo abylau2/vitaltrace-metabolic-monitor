@@ -1,17 +1,47 @@
-# Frontend design
+# Frontend rules
 
-When creating or changing a web interface in this project, read and apply
-`.agents/skills/frontend-design/SKILL.md` first. The user's brief, references,
-existing brand, and technical constraints take priority.
+For every frontend task:
 
-Make visual choices specific to the product and its audience. Before coding,
-decide on the page's purpose, type, color, layout, and one distinctive element.
-Avoid generic card grids, decorative gradients, repeated rounded boxes,
-filler copy, and motion added only for effect unless the brief calls for them.
+1. Read DESIGN.md before modifying UI.
+2. Use ./tabler as the primary implementation and visual reference.
+3. Use the installed frontend-design and anti-ai-slop-ui skills when relevant.
+4. Existing application data and functionality must be preserved.
+5. Existing visual styling is NOT authoritative and may be replaced.
 
-Build the working interface, then review it at desktop and mobile sizes.
-Check content, overflow, keyboard focus, contrast, and reduced motion. Revise
-anything that looks interchangeable with an unrelated product.
+Do not invent a new generic dashboard design when an equivalent Tabler
+pattern already exists.
 
-Source: Anthropic's [frontend-design skill](https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md),
-downloaded from `main` on 2026-09-20 (latest file commit: `41bbe19`, 2026-09-03).
+Before creating a component, inspect ./tabler for an existing pattern.
+
+Do not create generic components such as:
+- MetricCard
+- StatCard
+- DashboardCard
+- InfoCard
+- AlertCard
+
+unless the content genuinely represents an independent card object.
+
+Avoid:
+- excessive cards
+- large empty areas
+- oversized metric numbers
+- generic SaaS layouts
+- decorative gradients
+- excessive pills
+- excessive border radius
+- arbitrary sidebars
+- healthcare-equals-green styling
+
+This is desktop work software, not a landing page.
+
+For significant UI changes:
+1. inspect existing implementation;
+2. inspect relevant Tabler examples;
+3. implement;
+4. run the application;
+5. inspect the rendered result;
+6. critique it visually;
+7. iterate before finishing.
+
+Do not judge frontend quality only from source code.
