@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" preserveAspectRatio="none" role="img" aria-label="Illustrative glucose trend over four hours">
+  <rect width="900" height="300" fill="#ffffff"/>
+  <g stroke="#e5e7eb" stroke-width="1">
+    <path d="M58 22H865M58 67H865M58 112H865M58 157H865M58 202H865M58 247H865"/>
+    <path d="M76 22V247M265 22V247M454 22V247M643 22V247M846 22V247" stroke-dasharray="2 5"/>
+  </g>
+  <g fill="#626f7c" font-family="Segoe UI, Arial, sans-serif" font-size="11">
+    <text x="14" y="26">180</text><text x="14" y="71">160</text><text x="14" y="116">140</text>
+    <text x="14" y="161">120</text><text x="14" y="206">100</text><text x="20" y="251">80</text>
+    <text x="58" y="283">06:00</text><text x="247" y="283">07:00</text><text x="436" y="283">08:00</text><text x="625" y="283">09:00</text><text x="817" y="283">09:41</text>
+    <text x="14" y="10" font-size="10">mg/dL</text>
+  </g>
+  <path d="M58 112H865" fill="none" stroke="#d63939" stroke-width="1.3" stroke-dasharray="5 5"/>
+  <rect x="724" y="96" width="139" height="16" fill="#ffffff"/>
+  <text x="861" y="107" text-anchor="end" fill="#bb3030" font-family="Segoe UI, Arial, sans-serif" font-size="10">Care plan limit</text>
+  <path d="M76 222C138 220 199 211 265 209S390 186 454 171 576 151 643 133 786 77 846 49" fill="none" stroke="#d63939" stroke-width="2.6" stroke-linecap="round"/>
+  <g fill="#ffffff" stroke="#d63939" stroke-width="2">
+    <circle cx="76" cy="222" r="3.7"/><circle cx="265" cy="209" r="3.7"/><circle cx="454" cy="171" r="3.7"/><circle cx="643" cy="133" r="3.7"/>
+  </g>
+  <circle cx="846" cy="49" r="5.5" fill="#d63939" stroke="#ffffff" stroke-width="2"/>
+  <text x="835" y="37" text-anchor="end" fill="#d63939" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">168</text>
+</svg>

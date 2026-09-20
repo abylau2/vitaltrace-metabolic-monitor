@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="180" viewBox="0 0 390 180" role="img" aria-label="Illustrative glucose trend rising from about 90 to 168 milligrams per deciliter">
+  <rect width="390" height="180" fill="#ffffff"/>
+  <g stroke="#e5e7eb" stroke-width="1">
+    <path d="M35 19H377M35 47H377M35 75H377M35 103H377M35 131H377M35 159H377"/>
+  </g>
+  <g fill="#626f7c" font-family="Arial, sans-serif" font-size="10">
+    <text x="3" y="22">180</text><text x="3" y="50">160</text><text x="3" y="78">140</text><text x="3" y="106">120</text><text x="3" y="134">100</text><text x="9" y="162">80</text>
+    <text x="34" y="177">06:00</text><text x="111" y="177">07:00</text><text x="188" y="177">08:00</text><text x="265" y="177">09:00</text><text x="341" y="177">09:41</text>
+  </g>
+  <path d="M35 75H377" fill="none" stroke="#d63939" stroke-width="1" stroke-dasharray="4 4"/>
+  <path d="M42 145C65 143 103 138 119 136S181 112 196 111 257 91 273 89 340 50 362 36" fill="none" stroke="#d63939" stroke-width="2.5" stroke-linecap="round"/>
+  <g fill="#fff" stroke="#d63939" stroke-width="1.8"><circle cx="42" cy="145" r="3"/><circle cx="119" cy="136" r="3"/><circle cx="196" cy="111" r="3"/><circle cx="273" cy="89" r="3"/></g>
+  <circle cx="362" cy="36" r="5" fill="#d63939" stroke="#fff" stroke-width="2"/>
+  <text x="347" y="28" text-anchor="end" fill="#d63939" font-family="Arial, sans-serif" font-size="12" font-weight="700">168</text>
+</svg>

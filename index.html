@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A sample clinical workspace for connected metabolic health monitoring.">
+  <title>VitalTrace — Patient monitoring record</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/tabler.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="page" id="top">
+    <header class="navbar navbar-expand-md d-print-none app-navbar">
+      <div class="container-xl navbar-inner">
+        <a class="navbar-brand" href="#top" aria-label="VitalTrace home"><img src="assets/mark.svg" alt="" width="25" height="25"><span>VitalTrace</span></a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link" href="#dashboard" aria-current="page">Overview</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sensors">Sensors</a></li>
+            <li class="nav-item"><a class="nav-link" href="#alerts">Alerts <span class="nav-count">1</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="snapshot-time text-secondary">Sample snapshot <time datetime="2026-09-20T09:42:00">20 Sep 2026, 09:42</time></div>
+      </div>
+    </header>
+    <div class="page-wrapper">
+      <main id="main">
+        <section class="page-header patient-header" id="dashboard" aria-labelledby="page-title">
+          <div class="container-xl">
+            <div class="patient-headline">
+              <div>
+                <div class="patient-breadcrumb text-secondary">Patients <span aria-hidden="true">/</span> MS-2048 <span aria-hidden="true">/</span> Monitoring</div>
+                <h1 class="page-title" id="page-title">Maya Chen <span class="patient-id">MS-2048</span></h1>
+                <div class="record-type text-secondary">Metabolic syndrome monitoring</div>
+              </div>
+              <span class="patient-plan"><span class="status-dot bg-green" aria-hidden="true"></span>Monitoring plan active</span>
+            </div>
+            <dl class="patient-details">
+              <div><dt>Age</dt><dd>54 years</dd></div><div><dt>Program</dt><dd>Metabolic health</dd></div><div><dt>Care team</dt><dd>Northside Clinic</dd></div><div><dt>Monitoring</dt><dd>Daily, remote</dd></div><div><dt>Started</dt><dd>03 Sep 2026</dd></div>
+            </dl>
+          </div>
+        </section>
+        <div class="page-body">
+          <div class="container-xl">
+            <section class="attention-strip" aria-label="Reading requiring attention">
+              <span class="status-dot bg-red" aria-hidden="true"></span>
+              <div><strong>Glucose reading needs review</strong><span>Above this patient's configured care plan range.</span></div>
+              <a href="#glucose">Review trend</a>
+            </section>
+            <section class="card glucose-workspace" id="glucose" aria-labelledby="trend-title">
+              <div class="card-header"><div><h2 class="card-title" id="trend-title">Blood glucose</h2><div class="text-secondary small">GLU-02 · Last 4 hours</div></div><span class="badge bg-red-lt text-red">Needs review</span></div>
+              <div class="card-body">
+                <div class="glucose-summary">
+                  <div class="glucose-reading"><span class="reading-label text-secondary">Latest reading <time datetime="2026-09-20T09:41:00">09:41</time></span><p><data value="168">168</data><span>mg/dL</span></p></div>
+                  <div class="glucose-limit"><span class="text-secondary">Care plan limit</span><strong>140 <small>mg/dL</small></strong></div>
+                  <p class="glucose-context text-secondary">The latest sample is above the configured range for this sample patient.</p>
+                </div>
+                <figure class="glucose-chart"><picture><source media="(max-width: 600px)" srcset="assets/glucose-trend-mobile.svg"><img src="assets/glucose-trend.svg" alt="Illustrative glucose trend rising across five sample readings over four hours. The latest value is 168 mg/dL, above the care plan limit of 140 mg/dL." width="900" height="300"></picture><figcaption><span>Illustrative trend from five sample readings</span><span>Dashed line: care plan limit</span></figcaption></figure>
+              </div>
+            </section>
+            <div class="detail-grid">
+              <section class="card measurements" id="sensors" aria-labelledby="vitals-title">
+                <div class="card-header"><div><h2 class="card-title" id="vitals-title">Current measurements</h2><div class="text-secondary small">5 sensors · Recorded 09:38–09:42</div></div></div>
+                <div class="card-table table-responsive"><table class="table table-vcenter measurement-table">
+                  <caption class="visually-hidden">Current measurements from connected sensors</caption>
+                  <thead><tr><th scope="col">Measurement</th><th scope="col">Reading</th><th scope="col">Status</th><th scope="col">Time</th></tr></thead>
+                  <tbody>
+                    <tr class="vital"><th scope="row"><span>Body temperature</span><small>TMP-01</small></th><td><data value="36.7">36.7</data> <span class="text-secondary">°C</span></td><td><span class="status-dot bg-green" aria-hidden="true"></span>Within range</td><td><time datetime="2026-09-20T09:40:00">09:40</time></td></tr>
+                    <tr class="vital"><th scope="row"><span>Heart rate</span><small>HR-03</small></th><td><data value="76">76</data> <span class="text-secondary">bpm</span></td><td><span class="status-dot bg-green" aria-hidden="true"></span>Within range</td><td><time datetime="2026-09-20T09:42:00">09:42</time></td></tr>
+                    <tr class="vital"><th scope="row"><span>Blood pressure</span><small>BP-04</small></th><td><data value="118/76">118/76</data> <span class="text-secondary">mmHg</span></td><td><span class="status-dot bg-green" aria-hidden="true"></span>Within range</td><td><time datetime="2026-09-20T09:38:00">09:38</time></td></tr>
+                    <tr class="vital"><th scope="row"><span>ECG signal</span><small>ECG-05</small></th><td><data value="98">98</data> <span class="text-secondary">% quality</span><img class="ecg-inline" src="assets/ecg-trace.svg" alt="Illustrative single-lead ECG trace" width="480" height="96"></td><td><span class="status-dot bg-green" aria-hidden="true"></span>Signal stable</td><td><time datetime="2026-09-20T09:42:00">09:42</time></td></tr>
+                  </tbody>
+                </table></div>
+              </section>
+              <aside class="card events-card" id="alerts" aria-labelledby="alerts-title">
+                <div class="card-header"><div><h2 class="card-title" id="alerts-title">Alerts &amp; events</h2><div class="text-secondary small">Care team queue</div></div><span class="text-secondary small">2 entries</span></div>
+                <ol class="list-group list-group-flush event-list">
+                  <li class="list-group-item event"><span class="status-dot bg-red" aria-hidden="true"></span><div><div class="event-top"><strong>Glucose reading flagged</strong><time datetime="2026-09-20T09:41:00">09:41</time></div><div class="event-code text-red">Needs review · GLU-02</div><p>168 mg/dL is above the configured range for this sample patient.</p><a href="#glucose">View glucose trend</a></div></li>
+                  <li class="list-group-item event"><span class="status-dot bg-green" aria-hidden="true"></span><div><div class="event-top"><strong>Temperature within range</strong><time datetime="2026-09-20T09:40:00">09:40</time></div><div class="event-code text-green">Within range · TMP-01</div><p>Latest body temperature: 36.7 °C.</p><a href="#history">See recent checks</a></div></li>
+                </ol>
+              </aside>
+            </div>
+            <section class="card history-card" id="history" aria-labelledby="history-title">
+              <div class="card-header"><h2 class="card-title" id="history-title">Recent checks</h2><span class="text-secondary small">20 Sep 2026</span></div>
+              <div class="card-table table-responsive"><table class="table table-vcenter history-table">
+                <caption class="visually-hidden">Recent sample measurements from connected sensors</caption>
+                <thead><tr><th scope="col">Time</th><th scope="col">Sensor</th><th scope="col">Reading</th><th scope="col">Status</th></tr></thead>
+                <tbody>
+                  <tr><td>09:42</td><td>Heart rate</td><td>76 bpm</td><td><span class="status-dot bg-green" aria-hidden="true"></span>Within range</td></tr>
+                  <tr class="review-row"><td>09:41</td><td>Blood glucose</td><td>168 mg/dL</td><td><span class="status-dot bg-red" aria-hidden="true"></span>Needs review</td></tr>
+                  <tr><td>09:40</td><td>Body temperature</td><td>36.7 °C</td><td><span class="status-dot bg-green" aria-hidden="true"></span>Within range</td></tr>
+                  <tr><td>09:38</td><td>Blood pressure</td><td>118/76 mmHg</td><td><span class="status-dot bg-green" aria-hidden="true"></span>Within range</td></tr>
+                </tbody>
+              </table></div>
+            </section>
+            <p class="record-note"><strong>Sample record.</strong> This page uses fictional patient data for an HTML and CSS project. Values do not update from real medical devices.</p>
+          </div>
+        </div>
+      </main>
+      <footer class="footer footer-transparent app-footer" id="contact"><div class="container-xl"><span>VitalTrace / Connected monitoring for metabolic health. Student demonstration, 2026.</span><span>Demo contact <a href="mailto:care@example.com">care@example.com</a></span></div></footer>
+    </div>
+  </div>
+</body>
+</html>
