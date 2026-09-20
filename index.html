@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f3f7f8">
-    <meta name="description" content="A sample IoT dashboard for monitoring metabolic health readings.">
-    <title>VitalTrace — Metabolic Health Monitor</title>
+    <meta name="theme-color" content="#f6f8f7">
+    <meta name="description" content="A sample clinical workspace for connected metabolic health monitoring.">
+    <title>VitalTrace — Patient monitoring record</title>
     <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
   </head>
@@ -15,159 +15,147 @@
     <header class="site-header">
       <div class="shell header-inner">
         <a class="brand" href="#top" aria-label="VitalTrace home">
-          <img src="assets/mark.svg" alt="" width="35" height="35">
-          <span>Vital<span class="brand-light">Trace</span></span>
+          <img src="assets/mark.svg" alt="" width="32" height="32">
+          <span>VitalTrace</span>
         </a>
+        <span class="header-divider" aria-hidden="true"></span>
+        <span class="workspace-name">Care team workspace</span>
         <nav class="main-nav" aria-label="Main navigation">
-          <a href="#dashboard">Dashboard</a>
+          <a href="#dashboard">Overview</a>
           <a href="#sensors">Sensors</a>
           <a href="#alerts">Alerts</a>
           <a href="#contact">Contact</a>
         </nav>
-        <span class="header-tag">Clinical view <span aria-hidden="true">●</span> Demo</span>
+        <span class="demo-label">Demo record</span>
       </div>
     </header>
 
     <main id="main">
-      <section class="intro shell" id="top" aria-labelledby="page-title">
-        <div class="intro-copy">
-          <p class="section-kicker">Connected care / metabolic syndrome</p>
-          <h1 id="page-title">Metabolic health, measured throughout the day.</h1>
-          <p class="intro-text">VitalTrace brings measurements from connected health sensors into one clear view, so a care team can spot changes and follow up sooner.</p>
-          <a class="button" href="#alerts">View latest alerts <span aria-hidden="true">↗</span></a>
+      <section class="record-header shell" id="top" aria-labelledby="page-title">
+        <p class="breadcrumb">Patients <span aria-hidden="true">/</span> MS-2048</p>
+        <div class="record-heading">
+          <div>
+            <p class="record-type">Metabolic syndrome monitoring</p>
+            <h1 id="page-title">Maya Chen</h1>
+            <p class="intro-text">A single view of readings from connected sensors, recent changes, and items for the care team to review.</p>
+          </div>
+          <div class="snapshot-meta">
+            <span class="snapshot-state"><span class="state-dot" aria-hidden="true"></span> Monitoring plan active</span>
+            <span>Sample snapshot · <time datetime="2026-09-20T09:42:00">20 Sep 2026, 09:42</time></span>
+          </div>
         </div>
-        <aside class="snapshot-note" aria-label="Data notice">
-          <span class="snapshot-icon" aria-hidden="true">i</span>
-          <p><strong>Sample dashboard</strong><br>Readings shown below are fictional examples for this coursework. They are not live medical data.</p>
+        <aside class="demo-notice" aria-label="About these readings">
+          <strong>About this record</strong>
+          <p>This page uses fictional patient data for an HTML and CSS project. Values do not update from real medical devices.</p>
         </aside>
       </section>
 
-      <section class="dashboard-section shell" id="dashboard" aria-labelledby="dashboard-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Patient dashboard</p>
-            <h2 id="dashboard-title">Overview</h2>
-          </div>
-          <p class="sync-time">Last sample update <time datetime="2026-09-20T09:42:00">20 Sep 2026, 09:42</time></p>
-        </div>
-
-        <div class="dashboard-grid">
-          <aside class="patient-panel" aria-labelledby="patient-title">
-            <div class="patient-topline">
-              <span class="panel-label">Patient information</span>
-              <span class="record-label">Record MS-2048</span>
-            </div>
-            <div class="patient-identity">
-              <span class="avatar" aria-hidden="true">MC</span>
+      <div class="workspace shell" id="dashboard">
+        <div class="primary-column">
+          <section class="measurements" id="sensors" aria-labelledby="sensors-title">
+            <div class="section-heading">
               <div>
-                <h3 id="patient-title">Maya Chen</h3>
-                <p>Metabolic health program</p>
+                <p class="section-context">20 Sep / five sensor readings</p>
+                <h2 id="sensors-title">Current measurements</h2>
               </div>
-            </div>
-            <dl class="patient-details">
-              <div><dt>Age</dt><dd>54 years</dd></div>
-              <div><dt>Monitoring</dt><dd>Daily, remote</dd></div>
-              <div><dt>Care team</dt><dd>Northside Clinic</dd></div>
-              <div><dt>Started</dt><dd>03 Sep 2026</dd></div>
-            </dl>
-            <div class="monitoring-state">
-              <span class="state-dot" aria-hidden="true"></span>
-              <div><strong>Monitoring active</strong><span>5 sensors connected</span></div>
-            </div>
-            <div class="patient-note">
-              <strong>Today's focus</strong>
-              <p>Review the glucose reading flagged by the configured care plan.</p>
-            </div>
-          </aside>
-
-          <div class="readings-panel" id="sensors">
-            <div class="readings-heading">
-              <div>
-                <span class="panel-label">Connected sensors</span>
-                <h3>Current readings</h3>
-              </div>
-              <span class="connected-count"><span class="state-dot" aria-hidden="true"></span> 5 online</span>
+              <span class="sample-time">Recorded 09:38–09:42</span>
             </div>
 
             <div class="sensor-grid">
-              <article class="sensor-card">
-                <div class="card-top"><h4>Body temperature</h4><span class="sensor-code">TMP-01</span></div>
-                <p class="reading"><data value="36.7">36.7</data><span>°C</span></p>
-                <div class="card-bottom"><span class="status status-normal">Within range</span><span>09:40</span></div>
-              </article>
-
-              <article class="sensor-card sensor-card-alert">
-                <div class="card-top"><h4>Blood glucose</h4><span class="sensor-code">GLU-02</span></div>
-                <p class="reading"><data value="168">168</data><span>mg/dL</span></p>
-                <div class="card-bottom"><span class="status status-review">Needs review</span><span>09:41</span></div>
-              </article>
-
-              <article class="sensor-card">
-                <div class="card-top"><h4>Heart rate</h4><span class="sensor-code">HR-03</span></div>
-                <p class="reading"><data value="76">76</data><span>bpm</span></p>
-                <div class="card-bottom"><span class="status status-normal">Within range</span><span>09:42</span></div>
-              </article>
-
-              <article class="sensor-card">
-                <div class="card-top"><h4>Blood pressure</h4><span class="sensor-code">BP-04</span></div>
-                <p class="reading"><data value="118/76">118<span class="reading-slash">/</span>76</data><span>mmHg</span></p>
-                <div class="card-bottom"><span class="status status-normal">Within range</span><span>09:38</span></div>
-              </article>
-
-              <article class="sensor-card ecg-card">
-                <div class="ecg-info">
-                  <div class="card-top"><h4>ECG signal</h4><span class="sensor-code">ECG-05</span></div>
-                  <p class="reading"><data value="98">98</data><span>% quality</span></p>
-                  <div class="card-bottom"><span class="status status-normal">Signal stable</span><span>09:42</span></div>
+              <article class="sensor-card glucose-card">
+                <div class="glucose-detail">
+                  <div class="card-heading">
+                    <div><span class="sensor-id">GLU-02</span><h3>Blood glucose</h3></div>
+                    <span class="status status-review"><span class="status-mark" aria-hidden="true"></span> Needs review</span>
+                  </div>
+                  <p class="feature-reading"><data value="168">168</data> <span>mg/dL</span></p>
+                  <p class="reading-note">Above this patient's configured care plan range.</p>
+                  <p class="reading-time">Latest sample · <time datetime="2026-09-20T09:41:00">09:41</time></p>
                 </div>
-                <img class="ecg-trace" src="assets/ecg-trace.svg" alt="Illustrative single-lead ECG waveform" width="480" height="96">
+                <figure class="glucose-chart">
+                  <img src="assets/glucose-trend.svg" alt="Illustrative glucose trend rising across five sample readings" width="520" height="180">
+                  <figcaption>Example trend · last 4 hours</figcaption>
+                </figure>
+              </article>
+
+              <article class="sensor-card small-card">
+                <div class="card-heading"><div><span class="sensor-id">TMP-01</span><h3>Body temperature</h3></div></div>
+                <p class="reading"><data value="36.7">36.7</data> <span>°C</span></p>
+                <div class="card-foot"><span class="status status-normal"><span class="status-mark" aria-hidden="true"></span> Within range</span><time datetime="2026-09-20T09:40:00">09:40</time></div>
+              </article>
+
+              <article class="sensor-card small-card">
+                <div class="card-heading"><div><span class="sensor-id">HR-03</span><h3>Heart rate</h3></div></div>
+                <p class="reading"><data value="76">76</data> <span>bpm</span></p>
+                <div class="card-foot"><span class="status status-normal"><span class="status-mark" aria-hidden="true"></span> Within range</span><time datetime="2026-09-20T09:42:00">09:42</time></div>
+              </article>
+
+              <article class="sensor-card small-card">
+                <div class="card-heading"><div><span class="sensor-id">BP-04</span><h3>Blood pressure</h3></div></div>
+                <p class="reading"><data value="118/76">118<span class="reading-slash">/</span>76</data> <span>mmHg</span></p>
+                <div class="card-foot"><span class="status status-normal"><span class="status-mark" aria-hidden="true"></span> Within range</span><time datetime="2026-09-20T09:38:00">09:38</time></div>
+              </article>
+
+              <article class="sensor-card small-card ecg-card">
+                <div class="card-heading"><div><span class="sensor-id">ECG-05</span><h3>ECG signal</h3></div></div>
+                <p class="reading"><data value="98">98</data> <span>% quality</span></p>
+                <img src="assets/ecg-trace.svg" alt="Illustrative single-lead ECG trace" width="480" height="96">
+                <div class="card-foot"><span class="status status-normal"><span class="status-mark" aria-hidden="true"></span> Signal stable</span><time datetime="2026-09-20T09:42:00">09:42</time></div>
               </article>
             </div>
-          </div>
+          </section>
+        </div>
+
+        <aside class="side-column" aria-label="Patient and alert information">
+          <section class="patient-panel" aria-labelledby="patient-title">
+            <div class="side-heading"><h2 id="patient-title">Patient record</h2><span>MS-2048</span></div>
+            <div class="patient-identity"><span class="avatar" aria-hidden="true">MC</span><div><strong>Maya Chen</strong><span>Northside Clinic</span></div></div>
+            <dl class="patient-details">
+              <div><dt>Age</dt><dd>54 years</dd></div>
+              <div><dt>Program</dt><dd>Metabolic health</dd></div>
+              <div><dt>Monitoring</dt><dd>Daily, remote</dd></div>
+              <div><dt>Started</dt><dd>03 Sep 2026</dd></div>
+            </dl>
+            <div class="connection-summary"><span class="state-dot" aria-hidden="true"></span><div><strong>Monitoring plan active</strong><span>5 sensors shown in this sample</span></div></div>
+          </section>
+
+          <section class="alerts-panel" id="alerts" aria-labelledby="alerts-title">
+            <div class="side-heading"><h2 id="alerts-title">Latest alerts</h2><span>2 entries</span></div>
+            <div class="alert-list">
+              <article class="alert-item alert-warning">
+                <span class="alert-symbol" aria-hidden="true">!</span>
+                <div><time datetime="2026-09-20T09:41:00">09:41 · Glucose</time><h3>Reading flagged</h3><p>168 mg/dL is above the configured range for this sample patient.</p></div>
+              </article>
+              <article class="alert-item alert-ok">
+                <span class="alert-symbol" aria-hidden="true">✓</span>
+                <div><time datetime="2026-09-20T09:40:00">09:40 · Temperature</time><h3>Within range</h3><p>Latest temperature is 36.7 °C.</p></div>
+              </article>
+            </div>
+            <a class="text-button" href="#history">See recent checks <span aria-hidden="true">→</span></a>
+          </section>
+        </aside>
+      </div>
+
+      <section class="history shell" id="history" aria-labelledby="history-title">
+        <div class="section-heading"><div><p class="section-context">Measurement history</p><h2 id="history-title">Recent checks</h2></div><span class="sample-time">Sample record · 20 Sep 2026</span></div>
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">Recent sample measurements from connected sensors</caption>
+            <thead><tr><th scope="col">Time</th><th scope="col">Sensor</th><th scope="col">Reading</th><th scope="col">Status</th></tr></thead>
+            <tbody>
+              <tr><td>09:42</td><td>Heart rate</td><td>76 bpm</td><td><span class="table-status">Within range</span></td></tr>
+              <tr><td>09:41</td><td>Blood glucose</td><td>168 mg/dL</td><td><span class="table-status table-status-review">Needs review</span></td></tr>
+              <tr><td>09:40</td><td>Body temperature</td><td>36.7 °C</td><td><span class="table-status">Within range</span></td></tr>
+              <tr><td>09:38</td><td>Blood pressure</td><td>118/76 mmHg</td><td><span class="table-status">Within range</span></td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
-
-      <div class="lower-grid shell">
-        <section class="alerts-panel" id="alerts" aria-labelledby="alerts-title">
-          <div class="section-heading compact">
-            <div><p class="section-kicker">Attention &amp; reassurance</p><h2 id="alerts-title">Latest alerts</h2></div>
-            <span class="alert-count">2 updates</span>
-          </div>
-          <div class="alert-list">
-            <article class="alert-item alert-warning">
-              <span class="alert-symbol" aria-hidden="true">!</span>
-              <div><h3>Glucose reading flagged</h3><p>168 mg/dL is above this demo patient's configured range. Review with the care team.</p><time datetime="2026-09-20T09:41:00">Today, 09:41</time></div>
-            </article>
-            <article class="alert-item alert-ok">
-              <span class="alert-symbol" aria-hidden="true">✓</span>
-              <div><h3>Temperature within range</h3><p>Latest body temperature: 36.7 °C. No action needed in this sample view.</p><time datetime="2026-09-20T09:40:00">Today, 09:40</time></div>
-            </article>
-          </div>
-        </section>
-
-        <section class="history-panel" aria-labelledby="history-title">
-          <div class="section-heading compact">
-            <div><p class="section-kicker">Sensor log</p><h2 id="history-title">Recent checks</h2></div>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <caption class="visually-hidden">Recent sample measurements from connected sensors</caption>
-              <thead><tr><th scope="col">Time</th><th scope="col">Sensor</th><th scope="col">Reading</th><th scope="col">Status</th></tr></thead>
-              <tbody>
-                <tr><td>09:42</td><td>Heart rate</td><td>76 bpm</td><td><span class="table-status">Normal</span></td></tr>
-                <tr><td>09:41</td><td>Glucose</td><td>168 mg/dL</td><td><span class="table-status table-status-review">Review</span></td></tr>
-                <tr><td>09:40</td><td>Temperature</td><td>36.7 °C</td><td><span class="table-status">Normal</span></td></tr>
-                <tr><td>09:38</td><td>Blood pressure</td><td>118/76 mmHg</td><td><span class="table-status">Normal</span></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-      </div>
     </main>
 
     <footer class="site-footer" id="contact">
       <div class="shell footer-inner">
-        <div><strong>VitalTrace</strong><p>Connected monitoring for metabolic health. Student demo, 2026.</p></div>
+        <div><strong>VitalTrace</strong><p>Connected monitoring for metabolic health. Student demonstration, 2026.</p></div>
         <div class="footer-contact"><span>Demo contact</span><a href="mailto:care@example.com">care@example.com</a></div>
       </div>
     </footer>

@@ -17,14 +17,14 @@ def check_page(browser, name, width, height):
     page.on("pageerror", lambda error: errors.append(str(error)))
     response = page.goto(URL, wait_until="networkidle")
     assert response and response.status == 200, f"{name}: page did not load"
-    assert page.title() == "VitalTrace — Metabolic Health Monitor"
+    assert page.title() == "VitalTrace — Patient monitoring record"
     assert page.locator("h1").count() == 1
     assert page.locator(".sensor-card").count() == 5
     assert page.locator(".patient-details div").count() == 4
     assert page.locator(".alert-item").count() == 2
     assert page.locator("tbody tr").count() == 4
     assert page.locator(".status-review").count() == 1
-    assert page.locator(".snapshot-note").is_visible()
+    assert page.locator(".demo-notice").is_visible()
     assert page.locator(".site-footer a[href^='mailto:']").count() == 1
 
     for image in page.locator("img").all():
@@ -49,15 +49,16 @@ def check_page(browser, name, width, height):
         page.wait_for_timeout(250)
         after = nav.evaluate("el => getComputedStyle(el).color")
         assert before != after, "navigation hover effect missing"
-        button = page.locator(".button")
-        before = button.evaluate("el => getComputedStyle(el).backgroundColor")
+        button = page.locator(".text-button")
+        before = button.evaluate("el => getComputedStyle(el).columnGap")
         button.hover()
         page.wait_for_timeout(250)
-        assert before != button.evaluate("el => getComputedStyle(el).backgroundColor"), "button hover effect missing"
+        assert before != button.evaluate("el => getComputedStyle(el).columnGap"), "button hover effect missing"
         card = page.locator(".sensor-card").first
+        before = card.evaluate("el => getComputedStyle(el).borderTopColor")
         card.hover()
         page.wait_for_timeout(250)
-        assert card.evaluate("el => getComputedStyle(el).transform") != "none", "card hover effect missing"
+        assert before != card.evaluate("el => getComputedStyle(el).borderTopColor"), "card hover effect missing"
 
     page.evaluate("window.scrollTo(0, 0)")
     page.screenshot(path=str(OUTPUT / f"{name}.png"), full_page=True)
