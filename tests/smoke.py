@@ -20,12 +20,18 @@ def check_page(browser, name, width, height):
     assert page.title() == "VitalTrace — Patient monitoring record"
     assert page.locator("h1").count() == 1
     assert page.locator(".sensor-card").count() == 5
+    for card in page.locator(".sensor-card").all():
+        assert card.locator("h3").count() == 1
+        assert card.locator("data").count() == 1
+        assert card.locator(".status").count() == 1
     assert page.locator(".patient-details div").count() == 4
     assert page.locator(".alert-item").count() == 2
     assert page.locator("tbody tr").count() == 4
     assert page.locator(".status-review").count() == 1
     assert page.locator(".demo-notice").is_visible()
     assert page.locator(".site-footer a[href^='mailto:']").count() == 1
+    for link in page.locator("a[href^='#']").all():
+        assert page.locator(link.get_attribute("href")).count() == 1, f"{name}: broken internal link"
 
     for image in page.locator("img").all():
         assert image.evaluate("img => img.complete && img.naturalWidth > 0"), f"{name}: broken image"
