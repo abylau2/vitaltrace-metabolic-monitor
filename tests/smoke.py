@@ -24,7 +24,8 @@ def check_page(browser, name, width, height):
         assert card.locator("h3").count() == 1
         assert card.locator("data").count() == 1
         assert card.locator(".status").count() == 1
-    assert page.locator(".patient-details div").count() == 4
+    assert page.locator(".patient-details div").count() == 5
+    assert page.locator(".attention-band").is_visible()
     assert page.locator(".alert-item").count() == 2
     assert page.locator("tbody tr").count() == 4
     assert page.locator(".status-review").count() == 1
@@ -55,16 +56,16 @@ def check_page(browser, name, width, height):
         page.wait_for_timeout(250)
         after = nav.evaluate("el => getComputedStyle(el).color")
         assert before != after, "navigation hover effect missing"
-        button = page.locator(".text-button")
-        before = button.evaluate("el => getComputedStyle(el).columnGap")
+        button = page.locator(".attention-link")
+        before = button.evaluate("el => getComputedStyle(el).backgroundColor")
         button.hover()
         page.wait_for_timeout(250)
-        assert before != button.evaluate("el => getComputedStyle(el).columnGap"), "button hover effect missing"
-        card = page.locator(".sensor-card").first
-        before = card.evaluate("el => getComputedStyle(el).borderTopColor")
-        card.hover()
+        assert before != button.evaluate("el => getComputedStyle(el).backgroundColor"), "button hover effect missing"
+        row = page.locator("tbody tr").first
+        before = row.evaluate("el => getComputedStyle(el).backgroundColor")
+        row.hover()
         page.wait_for_timeout(250)
-        assert before != card.evaluate("el => getComputedStyle(el).borderTopColor"), "card hover effect missing"
+        assert before != row.evaluate("el => getComputedStyle(el).backgroundColor"), "row hover effect missing"
 
     page.evaluate("window.scrollTo(0, 0)")
     page.screenshot(path=str(OUTPUT / f"{name}.png"), full_page=True)

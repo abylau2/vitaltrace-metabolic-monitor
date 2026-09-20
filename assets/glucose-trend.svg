@@ -1,14 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="180" viewBox="0 0 520 180" role="img" aria-label="Example glucose trend over four hours">
   <path d="M12 35H507M12 79H507M12 123H507" stroke="#e4ebe7" stroke-width="1"/>
   <path d="M12 79H507" stroke="#cfb6a9" stroke-width="1" stroke-dasharray="4 5"/>
+  <text x="15" y="72" fill="#9e6455" font-family="Arial, sans-serif" font-size="10">Care plan limit</text>
   <path d="M15 128C57 125 79 115 132 119S208 115 252 98 323 94 379 82 459 57 502 38" fill="none" stroke="#ad5137" stroke-width="3" stroke-linecap="round"/>
   <circle cx="15" cy="128" r="4" fill="#ad5137"/>
   <circle cx="132" cy="119" r="4" fill="#ad5137"/>
   <circle cx="252" cy="98" r="4" fill="#ad5137"/>
   <circle cx="379" cy="82" r="4" fill="#ad5137"/>
   <circle cx="502" cy="38" r="6" fill="#ad5137" stroke="#fff" stroke-width="3"/>
+  <text x="466" y="27" fill="#913d2d" font-family="Arial, sans-serif" font-size="11" font-weight="700">168</text>
   <path d="M12 144H507" stroke="#d8e1dd" stroke-width="1"/>
-  <g fill="#81918f" font-family="Arial, sans-serif" font-size="10">
+  <g fill="#5a6e73" font-family="Arial, sans-serif" font-size="10">
     <text x="12" y="165">06:00</text><text x="128" y="165">07:00</text><text x="247" y="165">08:00</text><text x="373" y="165">09:00</text><text x="472" y="165">09:41</text>
   </g>
 </svg>
