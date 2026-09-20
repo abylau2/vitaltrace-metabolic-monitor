@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" role="img" aria-label="VitalTrace mark">
+  <rect width="35" height="35" rx="9" fill="#176f70"/>
+  <path d="M17.5 7v21M7 17.5h21" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="26.3" cy="8.7" r="3.1" fill="#bee8de"/>
+</svg>
